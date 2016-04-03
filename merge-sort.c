@@ -1,7 +1,6 @@
 // !/usr/bin/gcc
 
 #include <stdio.h>
-using namespace std;
 
 void merge(int arr[], int l, int m, int r)
 {
@@ -22,7 +21,7 @@ void merge(int arr[], int l, int m, int r)
 	k = l; 
 	while (i < n1 && j < n2) {
 		if (L[i] <= R[j]) 
-			arr[k++] = L[i+];
+			arr[k++] = L[i++];
 		else 
 			arr[k++] = R[j++];
 	}
@@ -59,7 +58,7 @@ int main()
 	mergeSort(arr, 0, n);
 
 	for (i = 0; i < n; i++)
-		printf("%d ", &arr[i]);
+		printf("%d ", arr[i]);
 	
 	printf("\n");
 
