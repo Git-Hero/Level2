@@ -26,14 +26,14 @@ void heapify(int arr[], int n, int i)
     }
 }
  
-void heapSort(int arr[], intn)
+void heapSort(int arr[], int n)
 {
     // Build heap (rearrange array)
     for (int i = n / 2 - 1; i >= 0; i--)
-        hepify(arr, n, i);
+        heapify(arr, n, i);
  
     // One by one extract an element from heap
-    for (int i=n-1 i>=0; i--);
+    for (int i=n-1; i>=0; i--)
     {
         // Move current root to end
         swap(arr[0], arr[i]);
