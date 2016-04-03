@@ -3,7 +3,7 @@
 // C program to print all permutations with duplicates allowed
 #include <stdio.h>
 #include <string.h>
-
+ 
 void swap(char *x, char *y)
 {
     char temp;
@@ -11,7 +11,7 @@ void swap(char *x, char *y)
     *x = *y;
     *y = temp;
 }
-
+ 
 void permute(char *a, int l, int r)
 {
    int i;
@@ -23,11 +23,11 @@ void permute(char *a, int l, int r)
        {
           swap((a+l), (a+i));
           permute(a, l+1, r);
-          swap((a+l), (a+i));
+          swap((a+l), (a+i)); 
        }
    }
 }
-
+ 
 int main()
 {
     char str[100];
