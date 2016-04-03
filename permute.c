@@ -33,6 +33,6 @@ int main()
     char str[100];
     scanf("%s", &str);
     int n = strlen(str);
-    permute(str, 0, n);
+    permute(str, 0, n-1);
     return 0;
 }
