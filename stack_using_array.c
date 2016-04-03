@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-define LIMIT 100
+#define LIMIT 100
 
 struct stack {
 	int top;
@@ -8,7 +8,7 @@ struct stack {
 };
 
 void push(struct stack *s, int num) {
-	if (s->top == LIMIT) {
+	if (s->top == LIMIT-1) {
 		printf("Stack overflow!\n");
 		exit(EXIT_FAILURE);
 	}
@@ -16,19 +16,19 @@ void push(struct stack *s, int num) {
 }
 
 void pop(struct stack *s) {
-	if (s->top == 0) {
+	if (s->top == -1) {
 		printf("Stack underflow!\n");
 		exit(EXIT_FAILURE);
 	}
 	--(s->top);
 }
 
-int gettop(struct stack s) {
+int gettop(struct stack *s) {
 	return (s->item)[s->top];
 }
 
 void printstack(struct stack *s) {
-	int i = (s.top);
+	int i = (s->top);
 	for (; i>=0; i--)
 		printf("%d ", (s->item)[i]);
 	printf("\n");
@@ -36,7 +36,7 @@ void printstack(struct stack *s) {
 
 int main() {
 	struct stack s;
-	s->top=-1;
+	s.top=-1;
 	int n, c;
 	do {
 		printf("Enter your choice \n");
@@ -44,8 +44,8 @@ int main() {
 		printf("2. pop\n");
 		printf("3. gettop\n");
 		printf("4. printstack\n");
-		scanf("%d", n);
-		switch (&n) {
+		scanf("%d", &n);
+		switch (n) {
 			case 1 : printf("Enter value "); scanf("%d", &n);
 				 push(&s, n);
 				 break;
@@ -55,7 +55,7 @@ int main() {
 			case 3 : printf("%d is the top element\n", gettop(&s));
 				 break;
 
-			case 4 : printstack(s);
+			case 4 : printstack(&s);
 				 break;
 
 			default : break;
