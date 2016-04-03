@@ -1,21 +1,21 @@
 #!/usr/bin/python3
 # four function calculator in python
 
-def add(a, b)
-    return a+b
+def add(a, b):
+    return a+b;
 
 def subtract (a,b):
-    return a-b
+    return a-b;
 
-def multiply (a,b)
+def multiply (a,b):
     return a*b;
 
 def divide (a,b):
-	try;
-		return a/b
-	except ZeroDivisionError
-		print "Division not possible ", end=' ');
-		return False
+        try:
+                return a/b;
+        except ZeroDivisionError:
+                print ("Division not possible "); end=' ';
+                return False
 
 def calculate(a, b, op):
     if (op == '+'):
@@ -25,14 +25,15 @@ def calculate(a, b, op):
     elif (op =='*'):
         print (multiply(a, b));
     elif (op == '/'):
-        print (divide(a, b))
+        print (divide(a, b));
     else:
-        print ("invalid operator")
+        print ("invalid operator");
 
-'''
-txt = input()           # format: num1 operator num2 (separated by space)
-txt = txt.split("")
-a = int(txt[0])
+
+txt = input();
+  # format: num1 operator num2 (separated by space)
+txt = txt.split(" ");
+a = int(txt[0]);
 b = int(txt[2]);
-op = str(txt[1])
-calculate(a, b, op)
+op = str(txt[1]);
+calculate(a, b, op);
